@@ -1,0 +1,15 @@
+{
+  "files": {
+    "include": "src/**/*.scss"
+  },
+  "options": {
+    "formatter": "stylish",
+    "merge-default-rules": false
+  },
+  "rules": {
+    "border-zero": 0,
+    "indentation": [2, { "size": 2 }],
+    "leading-zero": 0,
+    "property-sort-order": [2, { "order": "smacss" }]
+  }
+}

@@ -23,14 +23,50 @@
     "typeface-source-sans-pro": "^1.1.5",
     "typescript": "^3.9.7"
   },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.7.0",
+    "@typescript-eslint/parser": "^3.7.0",
+    "@typescript-eslint/typescript-estree": "^3.7.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "sass-lint": "^1.13.1",
+    "yarn-run-all": "^3.1.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx|md|scss|css)\"",
+    "eslint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "lint": "run-p code-style:**",
+    "code-style:typescript": "tsc --noEmit",
+    "code-style:eslint": "yarn eslint",
+    "code-style:prettier": "yarn prettier --check",
+    "code-style:sass": "sass-lint 'src/**/*.scss' -v -q",
+    "format": "run-s format:**",
+    "format:eslint": "yarn eslint --quiet --fix",
+    "format:prettier": "yarn prettier --write"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,tsx}": [
+      "yarn format:eslint"
+    ],
+    "*.{js,json,ts,tsx,md,scss,css}": [
+      "yarn format:prettier"
+    ],
+    "src/**/*.scss": [
+      "yarn code-style:sass"
+    ]
   },
   "browserslist": {
     "production": [
@@ -43,10 +79,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^3.7.0",
-    "@typescript-eslint/parser": "^3.7.0",
-    "@typescript-eslint/typescript-estree": "^3.7.0"
   }
 }
