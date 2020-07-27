@@ -1,0 +1,27 @@
+@import '../../styles/colors';
+
+.ResizableBox {
+  position: relative;
+}
+
+.ResizeHandler {
+  $handler-border-size: 0.3rem;
+  $handler-content-height: 0.4rem;
+  $handler-content-width: 2rem;
+  $handler-total-height: calc(
+    #{$handler-border-size} * 2 + #{$handler-content-height}
+  );
+  $handler-total-width: calc(
+    #{$handler-border-size} * 2 + #{$handler-content-width}
+  );
+
+  position: absolute;
+  bottom: calc(#{$handler-total-height} * -1 / 2);
+  left: calc(50% - #{$handler-total-width} / 2);
+  width: $handler-content-width;
+  height: $handler-content-height;
+  border: $handler-border-size solid $dark-background;
+  border-radius: 0.5rem;
+  background-color: $secondary;
+  z-index: 10;
+}
