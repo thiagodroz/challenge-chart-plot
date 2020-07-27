@@ -1,0 +1,16 @@
+@import '../../styles/colors';
+@import '../../styles/constants';
+
+.Component {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: $header-height;
+  padding: 0 $content-side-padding;
+  background-color: $dark-background;
+}
+
+.Title {
+  font-size: 1.2em;
+  color: $light-text;
+}
