@@ -1,0 +1,27 @@
+@import '../../styles/colors';
+@import '../../styles/constants';
+
+.Component {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: $footer-height;
+  padding: 0 $content-side-padding;
+  background-color: $dark-background;
+}
+
+.Button {
+  height: 2rem;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 4px;
+  color: $light-text;
+  font-weight: 600;
+  background-color: $primary;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $darken-primary;
+  }
+}
