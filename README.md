@@ -102,4 +102,4 @@ If you are already in the hiring process, you may send it to whoever is your con
 
 ## Browser support
 
-Browser support configured to `>0.2%`. That adds support to browsers like IE11 as list in the [browserl.ist](https://browserl.ist/?q=%3E+0.2%25%2C+not+dead%2C+not+op_mini+all)`s website.
+Browser support configured to `>0.2%`. That adds support to browsers like IE11 as listed in the [browserl.ist](https://browserl.ist/?q=%3E+0.2%25%2C+not+dead%2C+not+op_mini+all)`s website.
