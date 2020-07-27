@@ -39,10 +39,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx|md|scss|css)\"",
-    "eslint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
     "lint": "run-p code-style:**",
     "code-style:typescript": "tsc --noEmit",
-    "code-style:eslint": "yarn eslint",
     "code-style:prettier": "yarn prettier --check",
     "code-style:sass": "sass-lint 'src/**/*.scss' -v -q",
     "format": "run-s format:**",
@@ -58,9 +56,6 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,ts,tsx}": [
-      "yarn format:eslint"
-    ],
     "*.{js,json,ts,tsx,md,scss,css}": [
       "yarn format:prettier"
     ],
