@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { App } from 'components/App';
+import { CodeProvider } from 'contexts/CodeContext';
+import { EventsProvider } from 'contexts/EventsContext';
 
 import * as serviceWorker from './serviceWorker';
 import 'typeface-source-sans-pro';
@@ -10,7 +12,11 @@ import './index.scss';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CodeProvider>
+      <EventsProvider>
+        <App />
+      </EventsProvider>
+    </CodeProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
